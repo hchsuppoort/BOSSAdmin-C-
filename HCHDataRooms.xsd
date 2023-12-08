@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HCHDataRooms" targetNamespace="http://tempuri.org/HCHDataRooms.xsd" xmlns:mstns="http://tempuri.org/HCHDataRooms.xsd" xmlns="http://tempuri.org/HCHDataRooms.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HCHDataConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HCHDataConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BossAdmin.My.MySettings.GlobalReference.Default.HCHDataConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwRoomsTableAdapter" GeneratorDataComponentClassName="vwRoomsTableAdapter" Name="vwRooms" UserDataComponentName="vwRoomsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HCHDataConnectionString (MySettings)" DbObjectName="HCHDataOptions.dbo.vwRooms" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ResUsage, UsageDescription, Room FROM dbo.vwRooms</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ResUsage" DataSetColumn="ResUsage" />
+              <Mapping SourceColumn="UsageDescription" DataSetColumn="UsageDescription" />
+              <Mapping SourceColumn="Room" DataSetColumn="Room" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HCHDataRooms" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HCHDataRooms" msprop:Generator_UserDSName="HCHDataRooms">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwRooms" msprop:Generator_TableClassName="vwRoomsDataTable" msprop:Generator_TableVarName="tablevwRooms" msprop:Generator_TablePropName="vwRooms" msprop:Generator_RowDeletingName="vwRoomsRowDeleting" msprop:Generator_RowChangingName="vwRoomsRowChanging" msprop:Generator_RowEvHandlerName="vwRoomsRowChangeEventHandler" msprop:Generator_RowDeletedName="vwRoomsRowDeleted" msprop:Generator_UserTableName="vwRooms" msprop:Generator_RowChangedName="vwRoomsRowChanged" msprop:Generator_RowEvArgName="vwRoomsRowChangeEvent" msprop:Generator_RowClassName="vwRoomsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ResUsage" msprop:Generator_ColumnVarNameInTable="columnResUsage" msprop:Generator_ColumnPropNameInRow="ResUsage" msprop:Generator_ColumnPropNameInTable="ResUsageColumn" msprop:Generator_UserColumnName="ResUsage">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UsageDescription" msprop:Generator_ColumnVarNameInTable="columnUsageDescription" msprop:Generator_ColumnPropNameInRow="UsageDescription" msprop:Generator_ColumnPropNameInTable="UsageDescriptionColumn" msprop:Generator_UserColumnName="UsageDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Room" msprop:Generator_ColumnVarNameInTable="columnRoom" msprop:Generator_ColumnPropNameInRow="Room" msprop:Generator_ColumnPropNameInTable="RoomColumn" msprop:Generator_UserColumnName="Room" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vwRooms" />
+      <xs:field xpath="mstns:ResUsage" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

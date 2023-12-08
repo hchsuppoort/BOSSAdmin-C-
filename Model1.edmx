@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HCHDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="spGetAlphaCodes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetOpenProjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetTaxDistrictList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetVendorsInUse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="HCHDataModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HCHDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HCHDataEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="spGetAlphaCodes" ReturnType="Collection(HCHDataModel.spGetAlphaCodes_Result)" />
+          <FunctionImport Name="spGetProjectsForPlan" ReturnType="Collection(HCHDataModel.spGetProjectsForPlan_Result)">
+          <Parameter Name="PlanID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetTaxDistrictList" ReturnType="Collection(HCHDataModel.spGetTaxDistrictList_Result)" />
+          <FunctionImport Name="spGetVendorsInUse" ReturnType="Collection(HCHDataModel.spGetVendorsInUse_Result)" />
+          <FunctionImport Name="spGetOpenProjects" ReturnType="Collection(HCHDataModel.spGetOpenProjects_Result)" />
+        </EntityContainer>
+        <ComplexType Name="spGetAlphaCodes_Result">
+          <Property Type="String" Name="AlphaCode" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="alphaid" Nullable="false" />
+          <Property Type="Boolean" Name="Taxable" Nullable="true" />
+          <Property Type="Int32" Name="GroupCode" Nullable="true" />
+          <Property Type="String" Name="POMessage" Nullable="true" MaxLength="200" />
+          <Property Type="Decimal" Name="WCPerc" Nullable="true" Precision="9" Scale="2" />
+          <Property Type="Int32" Name="AlphaGroupID" Nullable="true" />
+          <Property Type="Boolean" Name="PAVendorOnly" Nullable="true" />
+          <Property Type="String" Name="AlphaCodeDescription" Nullable="true" MaxLength="59" />
+        </ComplexType>
+        <ComplexType Name="spGetProjectsForPlan_Result">
+          <Property Type="String" Name="ProjectID" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="PlanPrice" Nullable="true" />
+          <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="spGetTaxDistrictList_Result">
+          <Property Type="Int32" Name="TaxPermitID" Nullable="false" />
+          <Property Type="String" Name="TaxPermitDistrict" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spGetVendorsInUse_Result">
+          <Property Type="Int32" Name="vendorid" Nullable="false" />
+          <Property Type="String" Name="vdrName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="vdrFax" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="DrawsExist" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spGetOpenProjects_Result">
+          <Property Type="String" Name="ProjectID" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="ProjectName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="TaxPermitID" Nullable="true" />
+          <Property Type="Byte" Name="StandardPlan" Nullable="true" />
+          <Property Type="Decimal" Name="Markup" Nullable="true" Precision="18" Scale="4" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HCHDataModelStoreContainer" CdmEntityContainer="HCHDataEntities" >
+          <FunctionImportMapping FunctionImportName="spGetAlphaCodes" FunctionName="HCHDataModel.Store.spGetAlphaCodes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HCHDataModel.spGetAlphaCodes_Result">
+                <ScalarProperty Name="AlphaCode" ColumnName="AlphaCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="alphaid" ColumnName="alphaid" />
+                <ScalarProperty Name="Taxable" ColumnName="Taxable" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="POMessage" ColumnName="POMessage" />
+                <ScalarProperty Name="WCPerc" ColumnName="WCPerc" />
+                <ScalarProperty Name="AlphaGroupID" ColumnName="AlphaGroupID" />
+                <ScalarProperty Name="PAVendorOnly" ColumnName="PAVendorOnly" />
+                <ScalarProperty Name="AlphaCodeDescription" ColumnName="AlphaCodeDescription" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetTaxDistrictList" FunctionName="HCHDataModel.Store.spGetTaxDistrictList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HCHDataModel.spGetTaxDistrictList_Result">
+                <ScalarProperty Name="TaxPermitID" ColumnName="TaxPermitID" />
+                <ScalarProperty Name="TaxPermitDistrict" ColumnName="TaxPermitDistrict" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetVendorsInUse" FunctionName="HCHDataModel.Store.spGetVendorsInUse">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HCHDataModel.spGetVendorsInUse_Result">
+                <ScalarProperty Name="vendorid" ColumnName="vendorid" />
+                <ScalarProperty Name="vdrName" ColumnName="vdrName" />
+                <ScalarProperty Name="vdrFax" ColumnName="vdrFax" />
+                <ScalarProperty Name="DrawsExist" ColumnName="DrawsExist" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetOpenProjects" FunctionName="HCHDataModel.Store.spGetOpenProjects">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HCHDataModel.spGetOpenProjects_Result">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TaxPermitID" ColumnName="TaxPermitID" />
+                <ScalarProperty Name="StandardPlan" ColumnName="StandardPlan" />
+                <ScalarProperty Name="Markup" ColumnName="Markup" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
