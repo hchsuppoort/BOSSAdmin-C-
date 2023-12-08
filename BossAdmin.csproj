@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>BossAdmin</RootNamespace>
+    <AssemblyName>BossAdmin</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
+    <LangVersion>latest</LangVersion>
+    <PublishUrl>c:\deploy\bossadmin\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>BossAdmin</ProductName>
+    <PublisherName>Michele Brown</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.1.2.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\BossAdmin.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>bin\Release\BossAdmin.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>services.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DD32FE6562989A6872F8C4D80878D478281BD8C9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>BossAdmin_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'test build|x86'">
+    <OutputPath>bin\x86\test build\</OutputPath>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Win.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinToolbars.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinStatusBar.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.ExcelExport.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinCalcManager.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.Misc.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Win.AppStylistSupport.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v23.1, Version=23.1.20231.6, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HCHDataDataSetVendorsInUse.cs">
+      <DependentUpon>HCHDataDataSetVendorsInUse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyNamespace.Dynamic.Designer.cs" />
+    <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
+    <Compile Include="My Project\MyNamespace.Static.2.Designer.cs" />
+    <Compile Include="My Project\MyNamespace.Static.3.Designer.cs" />
+    <Compile Include="Common Modules\ApplicationEvents.cs" />
+    <Compile Include="Common Modules\AppMgr.cs" />
+    <Compile Include="Common Modules\DBCalls.cs" />
+    <Compile Include="Common Modules\CommonTypes.cs" />
+    <Compile Include="Common Modules\modCommon.cs" />
+    <Compile Include="Divisions.Designer.cs">
+      <DependentUpon>Divisions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Divisions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostAnalysisDetail.Designer.cs">
+      <DependentUpon>CostAnalysisDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostAnalysisDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostAnalysisPlanChooser.Designer.cs">
+      <DependentUpon>CostAnalysisPlanChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostAnalysisPlanChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CostAnalysisSearch.Designer.cs">
+      <DependentUpon>CostAnalysisSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CostAnalysisSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dsDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDetail.cs">
+      <DependentUpon>dsDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorDisplay.Designer.cs">
+      <DependentUpon>ErrorDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorLog.Designer.cs">
+      <DependentUpon>ErrorLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstimateView.Designer.cs">
+      <DependentUpon>EstimateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstimateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Explorer1.Designer.cs">
+      <DependentUpon>Explorer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Explorer1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HCHDataAnalysisDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataAnalysisDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataAnalysisDetail.cs">
+      <DependentUpon>HCHDataAnalysisDetail.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataCostAnalysis.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataCostAnalysis.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataCostAnalysis.cs">
+      <DependentUpon>HCHDataCostAnalysis.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataCostAnalysisHeader.cs">
+      <DependentUpon>HCHDataCostAnalysisHeader.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataDataSetVendorsInUse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataDataSetVendorsInUse.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataDSVendorCost.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataDSVendorCost.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataOptionsDataPlanEstimateAdd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataOptionsDataPlanEstimateAdd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataCostAnalysisHeader.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataCostAnalysisHeader.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataPlanEstimate.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataPlanEstimate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataPlanEstimate.cs">
+      <DependentUpon>HCHDataPlanEstimate.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataPlanRoomsData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataPlanRoomsData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataPlanRoomsData.cs">
+      <DependentUpon>HCHDataPlanRoomsData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQAAlphaCodes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQAAlphaCodes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQADataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQADataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQADataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQADataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQADistricts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQADistricts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQADistricts.cs">
+      <DependentUpon>HCHDataQADistricts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQAJobDetails1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQAJobDetails1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQAOpenProjects.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQAOpenProjects.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataQAProjectList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataQAProjectList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCHDataRooms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCHDataRooms.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiMain.Designer.cs">
+      <DependentUpon>mdiMain.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common Modules\modGlobals.cs" />
+    <Compile Include="Milestones.Designer.cs">
+      <DependentUpon>Milestones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Milestones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.cs" />
+    <Compile Include="My Project\Application.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PDFViewer.Designer.cs">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PDFViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanEstimateAddRows.Designer.cs">
+      <DependentUpon>PlanEstimateAddRows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanEstimateAddRows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanEstimateMaintenance.Designer.cs">
+      <DependentUpon>PlanEstimateMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanEstimateMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanRoomsAdd.Designer.cs">
+      <DependentUpon>PlanRoomsAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanRoomsAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanRoomsMaintenance.Designer.cs">
+      <DependentUpon>PlanRoomsMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanRoomsMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Positions.Designer.cs">
+      <DependentUpon>Positions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Positions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectMaintenance.Designer.cs">
+      <DependentUpon>ProjectMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptEstimateCosted.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEstimateCosted.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptProfitAnalysis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProfitAnalysis.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptProfitAnalysisSales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProfitAnalysisSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptSummaryBudgetRegion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSummaryBudgetRegion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="spGetAlphaCodes_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetOpenProjects_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetTaxDistrictList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spGetVendorsInUse_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMaintenance.Designer.cs">
+      <DependentUpon>UserMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorCosts.Designer.cs">
+      <DependentUpon>VendorCosts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendorCosts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPOReasons.Designer.cs">
+      <DependentUpon>VPOReasons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPOReasons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Divisions.resx">
+      <DependentUpon>Divisions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostAnalysisDetail.resx">
+      <DependentUpon>CostAnalysisDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostAnalysisPlanChooser.resx">
+      <DependentUpon>CostAnalysisPlanChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CostAnalysisSearch.resx">
+      <DependentUpon>CostAnalysisSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorDisplay.resx">
+      <DependentUpon>ErrorDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorLog.resx">
+      <DependentUpon>ErrorLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstimateView.resx">
+      <DependentUpon>EstimateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Explorer1.resx">
+      <DependentUpon>Explorer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mdiMain.resx">
+      <DependentUpon>mdiMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Milestones.resx">
+      <DependentUpon>Milestones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>BossAdmin.My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PDFViewer.resx">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanEstimateAddRows.resx">
+      <DependentUpon>PlanEstimateAddRows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanEstimateMaintenance.resx">
+      <DependentUpon>PlanEstimateMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanRoomsAdd.resx">
+      <DependentUpon>PlanRoomsAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanRoomsMaintenance.resx">
+      <DependentUpon>PlanRoomsMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Positions.resx">
+      <DependentUpon>Positions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectMaintenance.resx">
+      <DependentUpon>ProjectMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptEstimateCosted.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEstimateCosted.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptProfitAnalysis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProfitAnalysis.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptProfitAnalysisSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProfitAnalysisSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSummaryBudgetRegion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSummaryBudgetRegion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMaintenance.resx">
+      <DependentUpon>UserMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorCosts.resx">
+      <DependentUpon>VendorCosts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPOReasons.resx">
+      <DependentUpon>VPOReasons.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BossAdmin_1_TemporaryKey.pfx" />
+    <None Include="BossAdmin_4_TemporaryKey.pfx" />
+    <None Include="BossAdmin_TemporaryKey.pfx" />
+    <None Include="Common Modules\BOSS Cost Analysis.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HCHDataDataSetVendorsInUse.xsc">
+      <DependentUpon>HCHDataDataSetVendorsInUse.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSetVendorsInUse.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataDataSetVendorsInUse.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataDataSetVendorsInUse.xss">
+      <DependentUpon>HCHDataDataSetVendorsInUse.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HCHDataDSVendorCost.xsc">
+      <DependentUpon>HCHDataDSVendorCost.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDSVendorCost.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataDSVendorCost.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataDSVendorCost.xss">
+      <DependentUpon>HCHDataDSVendorCost.xsd</DependentUpon>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\Dollar.bmp" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\FIND.BMP" />
+    <Content Include="services.ico" />
+    <Content Include="App.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="dsDetail.xsc">
+      <DependentUpon>dsDetail.xsd</DependentUpon>
+    </None>
+    <None Include="dsDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDetail.xss">
+      <DependentUpon>dsDetail.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataAnalysisDetail.xsc">
+      <DependentUpon>HCHDataAnalysisDetail.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataAnalysisDetail.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataAnalysisDetail.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataAnalysisDetail.xss">
+      <DependentUpon>HCHDataAnalysisDetail.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataCostAnalysis.xsc">
+      <DependentUpon>HCHDataCostAnalysis.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataCostAnalysis.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataCostAnalysis.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataCostAnalysis.xss">
+      <DependentUpon>HCHDataCostAnalysis.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSet.xsc">
+      <DependentUpon>HCHDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataDataSet.xss">
+      <DependentUpon>HCHDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSet1.xsc">
+      <DependentUpon>HCHDataDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataDataSet1.xss">
+      <DependentUpon>HCHDataDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSet2.xsc">
+      <DependentUpon>HCHDataDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataDataSet2.xss">
+      <DependentUpon>HCHDataDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataOptionsDataPlanEstimateAdd.xsc">
+      <DependentUpon>HCHDataOptionsDataPlanEstimateAdd.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataOptionsDataPlanEstimateAdd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataOptionsDataPlanEstimateAdd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataOptionsDataPlanEstimateAdd.xss">
+      <DependentUpon>HCHDataOptionsDataPlanEstimateAdd.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataCostAnalysisHeader.xsc">
+      <DependentUpon>HCHDataCostAnalysisHeader.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataCostAnalysisHeader.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataCostAnalysisHeader.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataCostAnalysisHeader.xss">
+      <DependentUpon>HCHDataCostAnalysisHeader.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataPlanEstimate.xsc">
+      <DependentUpon>HCHDataPlanEstimate.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataPlanEstimate.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataPlanEstimate.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataPlanEstimate.xss">
+      <DependentUpon>HCHDataPlanEstimate.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataPlanRoomsData.xsc">
+      <DependentUpon>HCHDataPlanRoomsData.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataPlanRoomsData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataPlanRoomsData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataPlanRoomsData.xss">
+      <DependentUpon>HCHDataPlanRoomsData.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAAlphaCodes.xsc">
+      <DependentUpon>HCHDataQAAlphaCodes.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAAlphaCodes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQAAlphaCodes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQAAlphaCodes.xss">
+      <DependentUpon>HCHDataQAAlphaCodes.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQADataSet1.xsc">
+      <DependentUpon>HCHDataQADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQADataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQADataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQADataSet1.xss">
+      <DependentUpon>HCHDataQADataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQADataSet2.xsc">
+      <DependentUpon>HCHDataQADataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQADataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQADataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQADataSet2.xss">
+      <DependentUpon>HCHDataQADataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQADistricts.xsc">
+      <DependentUpon>HCHDataQADistricts.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQADistricts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQADistricts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQADistricts.xss">
+      <DependentUpon>HCHDataQADistricts.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAJobDetails1.xsc">
+      <DependentUpon>HCHDataQAJobDetails1.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAJobDetails1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQAJobDetails1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQAJobDetails1.xss">
+      <DependentUpon>HCHDataQAJobDetails1.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAOpenProjects.xsc">
+      <DependentUpon>HCHDataQAOpenProjects.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAOpenProjects.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQAOpenProjects.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQAOpenProjects.xss">
+      <DependentUpon>HCHDataQAOpenProjects.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAProjectList.xsc">
+      <DependentUpon>HCHDataQAProjectList.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataQAProjectList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataQAProjectList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataQAProjectList.xss">
+      <DependentUpon>HCHDataQAProjectList.xsd</DependentUpon>
+    </None>
+    <Content Include="Resources\LucidDream.isl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="HCHDataRooms.xsc">
+      <DependentUpon>HCHDataRooms.xsd</DependentUpon>
+    </None>
+    <None Include="HCHDataRooms.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCHDataRooms.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCHDataRooms.xss">
+      <DependentUpon>HCHDataRooms.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>BossAdmin.My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="House.ico" />
+    <Content Include="Resources\add32.png" />
+    <Content Include="Resources\Metro.isl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Save.bmp" />
+    <None Include="Resources\EditBrightContrast.bmp" />
+    <None Include="Resources\Edit_Undo.bmp" />
+    <None Include="Resources\Print.bmp" />
+    <None Include="Resources\NewCard.bmp" />
+    <None Include="Resources\NewDocument.bmp" />
+    <None Include="Resources\Save_FloppyDisk.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\InfoBarClose.png" />
+    <None Include="Resources\Undo_Redo.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommLayer">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonControls">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CommonObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Controllers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.CubeDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.DataSetConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ObjectFactory">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.Prompting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.ReportDefModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="CrystalDecisions.ReportAppServer.XmlSerialize">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="exists('app.$(Configuration).config')">
+    <!-- Generate transformed app config in the intermediate directory -->
+    <TransformXml Source="app.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="app.$(Configuration).config" />
+    <!-- Force build process to use the transformed configuration file from now on. -->
+    <ItemGroup>
+      <!-- <AppConfigWithTargetPath Remove="app.config" /> -->
+      <AppConfigWithTargetPath Remove="@(AppConfigWithTargetPath)" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+</Project>

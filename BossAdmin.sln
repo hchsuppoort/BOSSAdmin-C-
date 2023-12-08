@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BossAdmin", "BossAdmin.csproj", "{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		test build|x86 = test build|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}.Debug|x86.ActiveCfg = Release|x86
+		{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}.Debug|x86.Build.0 = Release|x86
+		{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}.Release|x86.ActiveCfg = Release|x86
+		{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}.Release|x86.Build.0 = Release|x86
+		{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}.test build|x86.ActiveCfg = test build|x86
+		{3D1890BE-73E5-0AEA-3429-5AF2F12C7C1E}.test build|x86.Build.0 = test build|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA48F861-9103-41DD-AC6B-CA27F9084399}
+	EndGlobalSection
+EndGlobal
